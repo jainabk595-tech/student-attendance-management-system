@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ subject.name }}</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="main">
+
+    <h1>{{ subject.name }} Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Students</h3>
+            <p>{{ attendance|length }}</p>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h2>Attendance</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll</th>
+                <th>Total</th>
+                <th>Present</th>
+                <th>%</th>
+            </tr>
+
+            {% for row in attendance %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.roll_no }}</td>
+                <td>{{ row.total_days }}</td>
+                <td>{{ row.present_days }}</td>
+
+                <td>
+                    {% if row.total_days > 0 %}
+                        {{ ((row.present_days / row.total_days) * 100) | round(1) }}%
+                    {% else %}
+                        0%
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
