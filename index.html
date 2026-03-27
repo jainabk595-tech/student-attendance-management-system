@@ -1,0 +1,403 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include "components/navbar.html" %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-text">
+      <h1>Book Professional Mehendi Artists Near You</h1>
+      <p>Explore trending designs & book instantly</p>
+
+      <div class="hero-buttons">
+        <button class="btn primary">Book Now</button>
+        <button class="btn secondary">Explore Designs</button>
+      </div>
+
+      <!-- SEARCH -->
+      <form class="search-bar">
+        <select id="state" class="form-control">
+          <option value="">Select State</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="West Bengal">West Bengal</option>
+        </select>
+
+        <select id="city" class="form-control">
+          <option value="">Select City</option>
+        </select>
+
+        
+
+        <input type="date">
+
+        <select id="service" class="form-control">
+          <option value="">Select Service</option>
+          <option value="/bridal_mehendi">Bridal Mehendi</option>
+          <option value="/party_mehendi">Party Mehendi</option>
+          <option value="/engagement_mehendi">Engagement Mehendi</option>
+          <option value="/festival_mehendi">Festival Mehendi</option>
+        </select>
+
+        <button type="button" onclick="goToService()">Search</button>
+      </form>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1603575448366-153f093fd0f3">
+    </div>
+
+  </div>
+</section>
+
+<!-- TRENDING (CAROUSEL) -->
+<section class="section">
+  <div class="container">
+    <div class="trending-header">
+
+  <p class="trending-subtitle">POPULAR CHOICES</p>
+
+  <h2 class="trending-title">Trending Now</h2>
+
+  <p class="trending-desc">
+    Discover the most loved mehendi designs chosen by brides across India
+  </p>
+
+</div>
+    <div class="trending-wrapper">
+      <div class="trending-track">
+
+        <!-- CARD 1 -->
+        <div class="trend-card">
+          <div class="trend-img">
+          <img src="{{ url_for('static', filename='images/mehendi1.jpg') }}">
+          <a href="/bridal-full-hand" class="view-btn">View Details</a>
+          </div>
+          <div class="trend-content">
+            <h3>Bridal Full Hand</h3>
+            <div class="trend-meta">
+              <span class="rating">⭐ 4.8</span>
+              <span class="price">₹5,000 - ₹30,000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="trend-card">
+          <div class="trend-img">
+          <img src="{{ url_for('static', filename='images/mehendi2.jpg') }}">
+          <a href="/bridal-full-hand" class="view-btn">View Details</a>
+          </div>
+          <div class="trend-content">
+            <h3>Arabic Design</h3>
+            <div class="trend-meta">
+              <span class="rating">⭐ 4.7</span>
+              <span class="price">₹4,000 - ₹20,000</span>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="trend-card">
+          <div class="trend-img">
+          <img src="{{ url_for('static', filename='images/mehendi3.jpg') }}">
+          <a href="/bridal-full-hand" class="view-btn">View Details</a>
+          </div>
+        
+          <div class="trend-content">
+            <h3>Minimalist</h3>
+            <div class="trend-meta">
+              <span class="rating">⭐ 4.6</span>
+              <span class="price">₹2,000 - ₹10,000</span>
+            </div>
+          
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="trend-card">
+          <div class="trend-img">
+          <img src="{{ url_for('static', filename='images/mehendi4.jpg') }}">
+          <a href="/bridal-full-hand" class="view-btn">View Details</a>
+          </div>
+        
+          <div class="trend-content">
+            <h3>Portrait Mehendi</h3>
+            <div class="trend-meta">
+              <span class="rating">⭐ 4.9</span>
+              <span class="price">₹8,000 - ₹40,000</span>
+            </div>
+        
+          </div>
+        </div>
+        <!-- card 5 -->
+        <div class="trend-card">
+          <div class="trend-img">
+          <img src="{{ url_for('static', filename='images/mehendi5.jpg') }}">
+          <a href="/bridal-full-hand" class="view-btn">View Details</a>
+          </div>
+        
+          <div class="trend-content">
+            <h3>Minimalist</h3>
+            <div class="trend-meta">
+              <span class="rating">⭐ 4.6</span>
+              <span class="price">₹2,000 - ₹10,000</span>
+            </div>
+      
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="view-all-wrapper">
+  <a href="/all-designs" class="view-all-btn">
+    View All Designs
+    <span class="arrow">→</span>
+  </a>
+</div>
+</section>
+<section class="services-section">
+  <div class="container">
+
+    <p class="section-subtitle">OUR SERVICES</p>
+    <h2 class="section-title">Services</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card bridal">
+        <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crown-icon lucide-crown"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></svg>
+        </div>
+        <h3>Bridal Mehendi</h3>
+        <p>Experience premium bridal mehendi designs</p>
+        <a href="/bridal_mehendi" class="learn-more">Learn More <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card party">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-party-popper-icon lucide-party-popper"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg>
+        </div>
+        <h3>Party Mehendi</h3>
+        <p>Trendy designs for parties & events</p>
+        <a href="/party_mehendi" class="learn-more">Learn More <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card bridal">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+          
+        </div>
+        <h3>Engagement Mehendi</h3>
+        <p>Elegant styles for your special day</p>
+        <a href="/engagement_mehendi" class="learn-more">Learn More <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card party">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+          
+        </div>
+        <h3>Festival Mehendi</h3>
+        <p>Traditional & modern festive designs</p>
+        <a href="/festival_mehendi" class="learn-more">Learn More <span class="arrow">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- how section -->
+<section class="how-section">
+  <div class="container">
+
+    <p class="section-subtitle">SIMPLE PROCESS</p>
+    <p class="section-title">How It Works</p>
+    <p class="section-desc">Get beautiful mehendi in just three easy steps</p>
+
+    <div class="how-wrapper">
+
+      <!-- LINE -->
+      <div class="how-line"></div>
+
+      <!-- STEP 1 -->
+      <div class="how-step">
+        <div class="circle">
+          <i data-lucide="search"></i>
+          <span class="step-number">1</span>
+        </div>
+        <h3>Choose Design</h3>
+        <p>Browse through our extensive collection of mehendi designs</p>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="how-step">
+        <div class="circle">
+          <i data-lucide="user"></i>
+          <span class="step-number">2</span>
+        </div>
+        <h3>Select Artist</h3>
+        <p>Select from experienced and verified mehendi artists</p>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="how-step">
+        <div class="circle">
+          <i data-lucide="calendar"></i>
+          <span class="step-number">3</span>
+        </div>
+        <h3>Book Appointment</h3>
+        <p>Book appointment quick, easy and secure</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>  
+     <!--reviews section  -->
+<section class="testimonial-section">
+  <div class="container">
+
+    <p class="section-subtitle">CUSTOMER STORIES</p>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-desc">
+      Read testimonials from our happy customers across India
+    </p>
+
+    <div class="testimonial-grid">
+
+      <!-- CARD 1 -->
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M7 7H3V13H9V7C9 5.9 8.1 5 7 5H5V3H7C9.2 3 11 4.8 11 7V13C11 14.1 10.1 15 9 15H3C1.9 15 1 14.1 1 13V7C1 5.9 1.9 5 3 5H7V7Z" fill="#caa75c"/>
+            <path d="M17 7H13V13H19V7C19 5.9 18.1 5 17 5H15V3H17C19.2 3 21 4.8 21 7V13C21 14.1 20.1 15 19 15H13C11.9 15 11 14.1 11 13V7C11 5.9 11.9 5 13 5H17V7Z" fill="#caa75c"/>
+          </svg>
+        </div>
+
+        <div class="stars">
+          ★ ★ ★ ★ ★
+        </div>
+
+        <p class="review-text">
+          "The mehendi artist was incredibly talented! My bridal mehendi turned out exactly as I imagined. Highly recommend!"
+        </p>
+
+        <div class="user">
+          <img src="{{ url_for('static', filename='images/user1.jpg') }}">
+          <div>
+            <h4>Priya Sharma</h4>
+            <span>Bridal Mehendi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+           <path d="M7 7H3V13H9V7C9 5.9 8.1 5 7 5H5V3H7C9.2 3 11 4.8 11 7V13C11 14.1 10.1 15 9 15H3C1.9 15 1 14.1 1 13V7C1 5.9 1.9 5 3 5H7V7Z" fill="#caa75c"/>
+           <path d="M17 7H13V13H19V7C19 5.9 18.1 5 17 5H15V3H17C19.2 3 21 4.8 21 7V13C21 14.1 20.1 15 19 15H13C11.9 15 11 14.1 11 13V7C11 5.9 11.9 5 13 5H17V7Z" fill="#caa75c"/>
+          </svg>
+      </div>
+        
+
+        <div class="stars">★ ★ ★ ★ ★</div>
+
+        <p class="review-text">
+          "Amazing service! The booking process was seamless and the artist arrived on time. Beautiful Arabic design!"
+        </p>
+
+        <div class="user">
+          <img src="{{ url_for('static', filename='images/user2.jpg') }}">
+          <div>
+            <h4>Anjali Verma</h4>
+            <span>Party Mehendi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+           <path d="M7 7H3V13H9V7C9 5.9 8.1 5 7 5H5V3H7C9.2 3 11 4.8 11 7V13C11 14.1 10.1 15 9 15H3C1.9 15 1 14.1 1 13V7C1 5.9 1.9 5 3 5H7V7Z" fill="#caa75c"/>
+           <path d="M17 7H13V13H19V7C19 5.9 18.1 5 17 5H15V3H17C19.2 3 21 4.8 21 7V13C21 14.1 20.1 15 19 15H13C11.9 15 11 14.1 11 13V7C11 5.9 11.9 5 13 5H17V7Z" fill="#caa75c"/>
+          </svg>
+       </div>
+
+        <div class="stars">★ ★ ★ ★ ★</div>
+
+        <p class="review-text">
+          "Professional service from start to finish. The design was intricate and lasted for weeks. Worth every penny!"
+        </p>
+
+        <div class="user">
+          <img src="{{ url_for('static', filename='images/user3.jpg') }}">
+          <div>
+            <h4>Neha Patel</h4>
+            <span>Engagement Mehendi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="testimonial-card">
+        <div class="quote-icon">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M7 7H3V13H9V7C9 5.9 8.1 5 7 5H5V3H7C9.2 3 11 4.8 11 7V13C11 14.1 10.1 15 9 15H3C1.9 15 1 14.1 1 13V7C1 5.9 1.9 5 3 5H7V7Z" fill="#caa75c"/>
+          <path d="M17 7H13V13H19V7C19 5.9 18.1 5 17 5H15V3H17C19.2 3 21 4.8 21 7V13C21 14.1 20.1 15 19 15H13C11.9 15 11 14.1 11 13V7C11 5.9 11.9 5 13 5H17V7Z" fill="#caa75c"/>
+         </svg>
+        </div>
+
+        <div class="stars">★ ★ ★ ★ ★</div>
+
+        <p class="review-text">
+          "I loved the minimalist design I got for Karwa Chauth. Simple yet elegant. Will definitely book again!"
+        </p>
+
+        <div class="user">
+          <img src="{{ url_for('static', filename='images/user4.jpg') }}">
+          <div>
+            <h4>Riya Malhotra</h4>
+            <span>Festival Mehendi</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+
+  <div class="container cta-content">
+    <p class="cta-subtitle">MAKE YOUR DAY SPECIAL</p>
+    <h2 class="cta-title">
+      Book Professional Mehendi Artists for Your<span class="abc"> Special day</span> 
+    </h2>
+    <p class="cta-desc">
+      Transform your celebrations with stunning mehendi designs crafted by expert artists
+    </p>
+
+    <a href="#" class="cta-btn">
+      Get Started →
+    </a>
+  </div>
+</section>
+
+
+
+
+{% include "components/footer.html" %}
+
+{% endblock %}
