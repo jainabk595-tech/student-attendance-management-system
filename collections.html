@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<section class="collections-hero">
+    <div class="hero-glass">
+        <h1>Explore Mehendi Collections</h1>
+        <p>Browse curated mehendi styles crafted for every occasion.</p>
+    </div>
+</section>
+
+<!-- LOOP ALL SECTIONS -->
+{% for section in collections %}
+
+<section class="collection-section" id="{{ section.id }}">
+
+    <div class="section-header">
+        <h2>{{ section.title }}</h2>
+
+        <div class="arrows">
+            <button onclick="scrollLeft('{{ section.id }}-row')">&#10094;</button>
+            <button onclick="scrollRight('{{ section.id }}-row')">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="scroll-row" id="{{ section.id }}-row">
+
+        {% for item in section.designs %}
+        <div class="design-card">
+
+            <img src="{{ url_for('static', filename='images/' + item.img) }}">
+
+            <div class="card-overlay">
+                <p>{{ item.price }}</p>
+                <button onclick="openBooking()">Book Now</button>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endfor %}
+
+{% endblock %}

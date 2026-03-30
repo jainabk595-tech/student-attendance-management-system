@@ -21,12 +21,94 @@
     <!-- JS -->
 <script src="https://unpkg.com/lucide@latest"></script>
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     lucide.createIcons();
   });
 </script>
+
+<!-- BOOKING MODAL -->
+<div  class="booking-modal" id="bookingModal">
+
+  <div class="booking-content">
+
+    <span class="close-btn" onclick="closeBooking()">×</span>
+
+    <h2>Book Mehendi Artist</h2>
+
+    <form action="/book" method="POST" onsubmit="console.log('FORM SUBMITTED')">
+
+      <div class="form-group">
+        <input type="text" name="name" placeholder="👤 What's your name ?" required>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="📞 Phone number" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" placeholder="✉️ Email" required>
+      </div>
+
+      <!-- STATE -->
+      <div class="form-group">
+        <select id="state" name="state" onchange="updateCities()">
+          <option value="">📍 Select State</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Karnataka">Karnataka</option>
+        </select>
+      </div>
+
+      <!-- CITY -->
+      <div class="form-group">
+        <select id="city" name="city" >
+          <option value="">🏙 Select City</option>
+          
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="venue" placeholder="📌 Venue Address">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="design" placeholder="🎨 Design Style">
+      </div>
+
+      <div class="form-group">
+        <input type="number" name="guests" placeholder="👥 Number of guests">
+      </div>
+
+      <div class="form-group">
+        <input type="date" name="date">
+      </div>
+
+      <div class="form-group" >
+        <input type="time" name="time">
+      </div>
+
+      <div class="form-group">
+        <textarea placeholder="📝 Special requests"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Confirm Booking</button>
+
+    </form>
+  </div>
+</div>
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="success-popup">
+  <div class="success-box">
+    <div class="checkmark">✔</div>
+    <h3>Booking Confirmed</h3>
+    <p>We will contact you shortly.</p>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

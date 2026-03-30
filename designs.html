@@ -1,0 +1,210 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+  
+
+  <!-- PAGE TITLE -->
+  <section class="design-hero">
+      <div class="design-hero-box">
+        <h1>Explore Mehendi Designs</h1>
+        <p>Discover beautiful mehendi styles crafted by top artists across India.</p>
+      </div>
+  </section>
+  <section class="design-page">
+    
+    <!-- GRID -->
+
+
+    <!-- GRID -->
+    <div class="design-grid" style="display: grid; grid-template-columns: repeat(4,1fr); gap: 30px;">
+
+        <!-- CARD 1 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design1.jpg') }}" style="width: 100%; height: 320px; object-fit: cover;">
+            <div class="card-info" style="padding: 15px; text-align: center; background: white;" >
+                <p class="price" style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #222;">₹1467</p>
+                <button class="book-btn" onclick="openBooking()"  style="background: #2e3d36; color: white; border: none; padding:none; border-radius: 25px;cursor: pointer;">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design2.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹962</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design3.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹968</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design4.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹858</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design5.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹757</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD  6-->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design6.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹934</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design7.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹1465</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design8.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹978</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design9.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹9578</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 10-->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design10.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹859</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design11.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹869</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design12.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹345</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 13 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design13.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹857</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 14 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design14.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹657</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design15.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹1467</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 16 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design16.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹1436</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 17 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design17.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹934</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 18 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design18.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹967</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 19 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design19.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹867</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- CARD 20 -->
+        <div class="design-card">
+            <img src="{{ url_for('static', filename='images/design20.jpg') }}">
+            <div class="card-info">
+                <p class="price">₹657</p>
+                <button class="book-btn" onclick="openBooking()">Book Now</button>
+            </div>
+        </div>
+
+       
+
+        <!-- ADD MORE SAME WAY -->
+
+    </div>
+
+</section>
+
+{% endblock %}
